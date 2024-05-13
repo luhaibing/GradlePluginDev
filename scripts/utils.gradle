@@ -1,0 +1,15 @@
+ext {
+    levelName = { Project value ->
+        List<String> names = new ArrayList()
+        Project level = value
+        while (level != null && level != rootProject) {
+            names.add(0, level.name)
+            level = level.parent
+        }
+        if (names.isEmpty()) {
+            return null
+        } else {
+            return names.join("-")
+        }
+    }
+}

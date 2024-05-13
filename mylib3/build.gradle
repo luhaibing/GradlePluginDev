@@ -1,0 +1,11 @@
+plugins {
+    id 'java-library'
+    alias(libs.plugins.jetbrains.kotlin.jvm)
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+use_script.toBoolean() && (apply from: "../scripts/publishement.gradle")

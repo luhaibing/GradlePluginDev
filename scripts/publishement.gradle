@@ -1,0 +1,23 @@
+apply from: "../scripts/utils.gradle"
+apply plugin: "maven-publish"
+afterEvaluate {
+    publishing {
+        publications {
+            dev(MavenPublication) {
+                if (components.hasProperty("debug")) {
+                    from components.debug
+                } else {
+                    from components.java
+                }
+                artifactId = levelName(project)
+                groupId = rootProject.ext.groupId
+                version = rootProject.ext.version
+            }
+        }
+        repositories {
+            maven {
+                url = rootProject.ext.path.toURI()
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+apply from: "scripts/utils.gradle"
+
+import java.util.regex.Pattern
+
+def taskNames = gradle.startParameter.taskNames
+println("running the Gradle command >>>${taskNames}")
+Pattern assemblePattern = Pattern.compile(":?[a-zA-Z0-9]+:assemble(debug|trial|release)")
+
+// 检测是否为打包安装的任务
+var condition = taskNames.size() == 1 && assemblePattern.matcher(taskNames.first().toLowerCase()) != null
+if (!condition) {
+    // TODO:
+    // return
+}
+
+if (!project.ext.path.exists()) {
+    // return
+}
+
+
+// 所有子模块
+Set<Project> children = project.subprojects
+// 已发布缓存
+Set<String> includes = new HashSet<>()
+// 未发布缓存
+Set<String> excludes = new HashSet<>()
+
+File folder = new File(ext.path, ext.groupId.replace(".", "/"))
+for (final def child in children) {
+    // TODO: 暂不考虑 子模块导入的插件类型
+    // TODO: 暂不考虑 不完整 的情况
+    def buildFileExists = child.buildFile.exists()
+    if (!buildFileExists) {
+        continue
+    }
+    def levelName = levelName(child)
+    def catalogue = new File(folder, levelName)
+    if (catalogue.exists()) {
+        includes.add(levelName)
+    } else {
+        excludes.add(levelName)
+    }
+}
+subprojects {
+    configurations.configureEach {
+        resolutionStrategy {
+            dependencySubstitution {
+                for (def value in includes) {
+                    def target = "${rootProject.ext.groupId}:$value:${rootProject.ext.version}"
+                    substitute project(":${value.split('_').join(':')}") using module(target)
+                }
+                for (def value in excludes) {
+                    def target = "${rootProject.ext.groupId}:$value:${rootProject.ext.version}"
+                    substitute module(target) using project(":${value.replace('_', ':')}")
+                }
+            }
+        }
+    }
+}
