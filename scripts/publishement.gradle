@@ -1,3 +1,4 @@
+println("publishement.gradle")
 apply from: "../scripts/utils.gradle"
 apply plugin: "maven-publish"
 afterEvaluate {
