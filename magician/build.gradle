@@ -1,0 +1,44 @@
+plugins {
+    id 'java-library'
+    id "org.gradle.kotlin.kotlin-dsl" version "4.2.1"
+    id 'java-gradle-plugin'
+}
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+dependencies {
+    implementation(localGroovy())
+    implementation(gradleApi())
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation(libs.gson)
+    implementation(libs.android.gradle.plugin)
+    implementation(libs.kotlin.gradle.plugin)
+
+
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlin.jvm/org.jetbrains.kotlin.jvm.gradle.plugin
+    implementation("org.jetbrains.kotlin.jvm:org.jetbrains.kotlin.jvm.gradle.plugin:1.9.0")
+    // https://mvnrepository.com/artifact/com.android.application/com.android.application.gradle.plugin
+    implementation("com.android.application:com.android.application.gradle.plugin:8.4.0")
+    // https://mvnrepository.com/artifact/com.android.library/com.android.library.gradle.plugin
+    implementation("com.android.library:com.android.library.gradle.plugin:8.4.0")
+
+}
+
+
+gradlePlugin {
+    plugins {
+        PublishModule {
+            id = "publish.module"
+            implementationClass = "com.mercer.magic.plugins.PublishModulePlugin"
+        }
+        ReplaceModule {
+            id = "replace.module"
+            implementationClass = "com.mercer.magic.plugins.ReplaceModulePlugin"
+        }
+        ExcludeResources {
+            id = "exclude.resources"
+            implementationClass = "com.mercer.magic.plugins.ExcludeResourcesPlugin"
+        }
+    }
+}
