@@ -26,9 +26,9 @@ dependencyResolutionManagement {
 rootProject.name = "GradlePluginDev"
 include ':app'
 include ':mylibrary1'
-include ':mylibrary2'
-include ':mylibrary3'
+// include ':mylibrary2'
+// include ':mylibrary3'
 include ':mylib1'
-include ':mylib2'
-include ':mylib3'
+// include ':mylib2'
+// include ':mylib3'
 // include ':magician'

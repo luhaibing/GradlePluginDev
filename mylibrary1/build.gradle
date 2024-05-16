@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.protobuf") // version "0.9.4"
     id("publish.module")
 }
 
@@ -35,16 +36,46 @@ dependencies {
     implementation libs.androidx.core.ktx
     implementation libs.androidx.appcompat
     implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
 
 
     implementation(project(":mylib1"))
-    implementation(project(":mylib2"))
-    implementation(project(":mylib3"))
-    implementation(project(":mylibrary2"))
-    implementation(project(":mylibrary3"))
+    // implementation(project(":mylib2"))
+    // implementation(project(":mylib3"))
+    // implementation(project(":mylibrary2"))
+    // implementation(project(":mylibrary3"))
+
+    implementation "androidx.datastore:datastore:1.0.0"
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    // https://mvnrepository.com/artifact/com.google.protobuf/protobuf-javalite
+    // implementation("com.google.protobuf:protobuf-javalite:3.25.3")
+    // implementation("com.google.protobuf:protobuf-javalite:3.24.4")
+    implementation("com.google.protobuf:protobuf-java:3.24.4")
+    // implementation("com.google.protobuf:protobuf-javalite:3.19.4")
+
 }
+
+
+protobuf {
+    protoc {
+        // artifact = "com.google.protobuf:protoc:3.19.4"
+        // artifact = "com.google.protobuf:protoc:3.25.3"
+        artifact = "com.google.protobuf:protoc:3.24.4"
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option 'lite'
+                }
+            }
+        }
+    }
+}
+
 
 use_script.toBoolean() && (apply from: "../scripts/publishement.gradle")

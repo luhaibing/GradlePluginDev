@@ -10,8 +10,8 @@ object Test {
 
     fun work() {
         println(this::class.java.`package`)
-        com.mercer.mylib2.Test.work()
-        com.mercer.mylib3.Test.work()
+//        com.mercer.mylib2.Test.work()
+//        com.mercer.mylib3.Test.work()
     }
 
 }

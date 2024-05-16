@@ -51,11 +51,11 @@ dependencies {
     implementation("com.mercer:mylibrary1:1.0.0")
     */
     implementation(project(":mylib1"))
-    implementation(project(":mylib2"))
-    implementation(project(":mylib3"))
+    // implementation(project(":mylib2"))
+    // implementation(project(":mylib3"))
 
     implementation(project(":mylibrary1"))
-    implementation(project(":mylibrary2"))
-    implementation(project(":mylibrary3"))
+    // implementation(project(":mylibrary2"))
+    // implementation(project(":mylibrary3"))
 
 }
