@@ -44,10 +44,10 @@ dependencies {
 
 
     implementation(project(":mylib1"))
-    // implementation(project(":mylib2"))
-    // implementation(project(":mylib3"))
-    // implementation(project(":mylibrary2"))
-    // implementation(project(":mylibrary3"))
+    implementation(project(":mylib2"))
+    implementation(project(":mylib3"))
+    implementation(project(":mylibrary2"))
+    implementation(project(":mylibrary3"))
 
     implementation "androidx.datastore:datastore:1.0.0"
     implementation("androidx.datastore:datastore-preferences:1.0.0")

@@ -10,8 +10,8 @@ java {
 }
 
 dependencies {
-    // implementation(project(":mylib2"))
-    // implementation(project(":mylib3"))
+    implementation(project(":mylib2"))
+    implementation(project(":mylib3"))
 }
 
 
