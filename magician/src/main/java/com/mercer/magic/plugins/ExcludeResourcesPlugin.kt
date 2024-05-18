@@ -1,13 +1,9 @@
 package com.mercer.magic.plugins
 
-import com.android.build.api.dsl.LibraryExtension
-import com.android.build.gradle.BaseExtension
 import com.mercer.magic.ANDROID_PLUGINS
 import com.mercer.magic.extensions.ExcludeResourcesExtensions
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.get
-import org.gradle.kotlin.dsl.getByName
 
 /**
  * author:  mercer
@@ -23,17 +19,25 @@ class ExcludeResourcesPlugin : Plugin<Project> {
         if (ANDROID_PLUGINS.none { target.pluginManager.hasPlugin(it) }) {
             return
         }
-        target.afterEvaluate {
-            val android: BaseExtension = extensions["android"] as BaseExtension
+//        target.afterEvaluate {
+//            val android: BaseExtension = extensions["android"] as BaseExtension
+//            // android.registerTransform()
+//            // android.()
+//            // AppExtension
+//            // BaseAppModuleExtension
+//
+//            // com.android.build.gradle.LibraryExtension
+//
+//            // BaseExtension
+//
+//
+//
+//
+//            println(android)
+//        }
 
-            // AppExtension
-            // BaseAppModuleExtension
 
-            // com.android.build.gradle.LibraryExtension
 
-            // BaseExtension
-            println(android)
-        }
         // TODO("Not yet implemented")
     }
 
