@@ -1,5 +1,8 @@
 pluginManagement {
     repositories {
+        maven {
+            url = File(rootDir, "resp").toURI()
+        }
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -14,6 +17,9 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        maven {
+            url = File(rootDir, "resp").toURI()
+        }
         google()
         mavenCentral()
     }
@@ -21,4 +27,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "DependencyReuseDemo"
 include(":app")
- 
+include(":magician")
