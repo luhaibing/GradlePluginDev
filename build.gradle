@@ -1,0 +1,38 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    if (new File(rootDir, "plugin-resp").exists()) {
+        dependencies {
+            classpath("com.mercer:magician:1.0.0")
+        }
+    }
+}
+plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.jetbrains.kotlin.jvm) apply false
+    alias(libs.plugins.android.library) apply false
+}
+Properties localProperties = getLocalProperties()
+def isEnabled = Boolean.parseBoolean(localProperties.get("use.dependency.reuse"))
+
+if (new File(rootDir, "plugin-resp").exists()) {
+    apply plugin: "dependency-reuse"
+    dependencyReuse {
+        respUri = new File(rootDir, "resp").toURI()
+        groupId = "com.mercer"
+        enabled = isEnabled
+        autoPublish = true
+    }
+}
+task clean(type: Delete) {
+    delete(rootProject.buildDir)
+    delete(new File(rootDir, "resp"))
+}
+
+Properties getLocalProperties() {
+    def properties = new Properties()
+    def file = new File(rootDir, "local.properties")
+    println(file.absolutePath)
+    properties.load(file.newInputStream())
+    return properties
+}

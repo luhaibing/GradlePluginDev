@@ -13,7 +13,6 @@ kotlin {
     }
 }
 dependencies {
-    implementation("com.google.code.gson:gson:2.10.1")
     // implementation(gradleKotlinDsl())
     implementation(gradleApi())
     implementation(localGroovy())
@@ -24,12 +23,15 @@ dependencies {
     // https://mvnrepository.com/artifact/com.android.library/com.android.library.gradle.plugin
     implementation("com.android.library:com.android.library.gradle.plugin:8.9.2")
     implementation("com.google.protobuf:protobuf-gradle-plugin:0.9.4")
+    implementation("com.google.code.gson:gson:2.10.1")
+    // https://mvnrepository.com/artifact/com.squareup.okio/okio
+    implementation("com.squareup.okio:okio:3.11.0")
 }
 
 afterEvaluate {
     publishing {
         publications {
-            create<MavenPublication>("dev") {
+            create<MavenPublication>("plugins") {
                 groupId = "com.mercer"
                 artifactId = "magician"
                 version = "1.0.0"
@@ -38,7 +40,7 @@ afterEvaluate {
         }
         repositories {
             maven {
-                url = File(project.rootDir, "resp").toURI()
+                url = File(project.rootDir, "plugin-resp").toURI()
             }
         }
     }

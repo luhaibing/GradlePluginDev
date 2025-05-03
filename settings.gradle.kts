@@ -1,8 +1,6 @@
 pluginManagement {
     repositories {
-        maven {
-            url = File(rootDir, "resp").toURI()
-        }
+        maven { url = File(rootDir, "plugin-resp").toURI() }
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -17,9 +15,8 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        maven {
-            url = File(rootDir, "resp").toURI()
-        }
+        maven { url = File(rootDir, "resp").toURI() }
+        maven { setUrl("https://repo.gradle.org/gradle/libs-releases/") }
         google()
         mavenCentral()
     }

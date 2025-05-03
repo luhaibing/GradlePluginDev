@@ -30,6 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -42,4 +45,16 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(project(":base:base"))
+    implementation(project(":base:ui"))
+
+    implementation(project(":device:common"))
+    implementation(project(":device:boat"))
+    implementation(project(":device:irrigate"))
+    implementation(project(":device:station"))
+    implementation(project(":device:swimming"))
+
+    implementation(project(":feature:weather"))
+
 }
