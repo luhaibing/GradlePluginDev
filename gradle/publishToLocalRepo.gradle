@@ -1,0 +1,39 @@
+if (!(pluginManager.hasPlugin("java") || pluginManager.hasPlugin("com.android.library") || pluginManager.hasPlugin("java-library"))) {
+    return
+}
+
+apply plugin: 'maven-publish'
+afterEvaluate {
+    List<String> names = new ArrayList<>()
+    Project level = project
+    do {
+        names.add(0, level.name)
+        level = level.parent
+    } while (level != rootProject)
+    publishing {
+        publications {
+            dev(MavenPublication) {
+                def ns = components.names
+                if ("kotlin" in ns) {
+                    from components.kotlin
+                } else if ("java" in ns) {
+                    from components.java
+                } else if ("debug" in ns) {
+                    from components.debug
+                }else {
+                    throw Exception("无法识别到正确的变体.")
+                }
+                artifactId = names.join("_")
+                groupId = project.groupId
+                version = "1.0.0"
+            }
+        }
+        // 添加仓库地址
+        repositories {
+            // 当上传到本地默认仓库
+            // mavenLocal()
+            // 当上传到本地指定路径仓库
+            maven { url = repo }
+        }
+    }
+}
