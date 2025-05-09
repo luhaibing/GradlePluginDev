@@ -160,12 +160,19 @@ class DependencyReuseGradle7Impl : OnDependencyReuseWork {
         val includePaths = includes.map(ProjectDependencySnapshot::named).map(Named::path)
         val excludes = arrayListOf<Named>()
         for (element in elements) {
+            if (element == project) {
+                continue
+            }
+            if (element.buildFile.exists().not()) {
+                continue
+            }
             val named = element.named
             if (named.path in includePaths) {
                 continue
             }
             excludes.add(named)
         }
+        System.err.println("name     : ${project.named.path}")
         System.err.println("includes : ${Gson().toJson(includes.map(ProjectDependencySnapshot::named).map(Named::path))}")
         System.err.println("excludes : ${Gson().toJson(excludes.map(Named::path))}")
         System.err.println()

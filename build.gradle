@@ -38,8 +38,8 @@ ext {
 task clean(type: Delete) {
     delete rootProject.buildDir
     delete(new File(rootDir, "local-repo"))
-    delete(new File(rootDir, "repo"))
-    delete(new File(rootDir, "resp"))
+    delete(new File(rootDir, "repo2"))
+    delete(new File(rootDir, "resp2"))
 }
 
 def dir = new File(rootDir, "plugin-resp")
