@@ -1,0 +1,52 @@
+plugins {
+    id("java-library")
+    id("org.jetbrains.kotlin.jvm") version("1.9.0")
+    // id("java-gradle-plugin")
+    id('maven-publish')
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+/*
+gradlePlugin {
+    plugins {
+        DependencyReuse {
+            id = "dependency-reuse"
+            implementationClass = "com.mercer.magic.ProjectDependencyReusePlugin"
+        }
+    }
+}
+*/
+
+dependencies {
+    implementation(localGroovy())
+    implementation(gradleApi())
+    implementation("com.google.code.gson:gson:2.9.1")
+    // https://mvnrepository.com/artifact/com.squareup.okio/okio
+    implementation("com.squareup.okio:okio:3.2.0")
+    implementation("com.android.library:com.android.library.gradle.plugin:7.4.2")
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlin.jvm/org.jetbrains.kotlin.jvm.gradle.plugin
+    implementation("org.jetbrains.kotlin.jvm:org.jetbrains.kotlin.jvm.gradle.plugin:1.9.0")
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0"
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            dev(MavenPublication) {
+                groupId = "com.mercer"
+                artifactId = "magician"
+                version = "1.0.0"
+                from(components.java)
+            }
+        }
+        repositories {
+            maven {
+                url = new File(rootProject.rootDir, "../plugin-resp").toURI()
+            }
+        }
+    }
+}

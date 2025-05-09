@@ -1,4 +1,5 @@
 pluginManagement {
+    // includeBuild("magician")
     repositories {
         google()
         mavenCentral()
@@ -12,6 +13,8 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        maven { url new File(rootDir, "repo").toURI() }
+        maven { url new File(rootDir, "resp").toURI() }
         google()
         mavenCentral()
         jcenter()
@@ -46,3 +49,4 @@ include ':business:mine'
 include ':business:device-i'
 include ':business:device-hydrocomm'
 
+include ':magician'

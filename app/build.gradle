@@ -62,26 +62,11 @@ android {
     productFlavors {
         dev {
             dimension("environment")
-            applicationIdSuffix ".debug"
+            applicationIdSuffix ".demo"
             resValue "string", "app_name", "Aiper_develop"
             buildConfigField "String", "ENVIRONMENT", "\"dev\""
             buildConfigField "String", "VERSION_SUFFIX", "\".${time}${branch}_dev\""
             buildConfigField "String", "URL_SENSORSDATA", "\"http://10.10.0.202:30092\""
-        }
-        trial {
-            dimension("environment")
-            applicationIdSuffix ".test"
-            resValue "string", "app_name", "Aiper_internal"
-            buildConfigField "String", "ENVIRONMENT", "\"test\""
-            buildConfigField "String", "VERSION_SUFFIX", "\".${time}_test\""
-            buildConfigField "String", "URL_SENSORSDATA", "\"http://13.229.121.202:30098\""
-        }
-        product {
-            dimension("environment")
-            resValue "string", "app_name", "Aiper"
-            buildConfigField "String", "ENVIRONMENT", "\"product\""
-            buildConfigField "String", "VERSION_SUFFIX", "\"\""
-            buildConfigField "String", "URL_SENSORSDATA", "\"https://event-tracking.aiper.com/new\""
         }
     }
 

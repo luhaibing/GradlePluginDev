@@ -1,1 +1,464 @@
-[]
+[
+  {
+    "path": "/mine/register_account",
+    "className": "com.aiper.mine.ui.account.RegisterAccountActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/mine/settings/update_password",
+    "className": "com.aiper.mine.ui.account.ModifyPasswordActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/mine/forget_password",
+    "className": "com.aiper.mine.ui.account.ForgetPasswordActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/mine/user_experience_plan",
+    "className": "com.aiper.mine.ui.UserExperiencePlanActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/mine/settings/unit",
+    "className": "com.aiper.mine.ui.UnitSettingsActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/mine/settings",
+    "className": "com.aiper.mine.ui.SettingsActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/mine/select_country",
+    "className": "com.aiper.mine.ui.SelectCountryActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/mine/protocol_agreement",
+    "className": "com.aiper.mine.ui.ProtocolAgreementActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/mine/privacy_security",
+    "className": "com.aiper.mine.ui.PrivacySecurityActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/mine/settings/message",
+    "className": "com.aiper.mine.ui.MessageSettingsActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/mine/settings/language",
+    "className": "com.aiper.mine.ui.LanguageSettingsActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://aiper.app/settings/account",
+    "className": "com.aiper.mine.ui.AccountSettingsActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/mine/settings/account",
+    "className": "com.aiper.mine.ui.AccountSettingsActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/mine/user_experience_plan_dialog",
+    "className": "com.aiper.mine.protocol.UserExperiencePlanDialogFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "app/home/mine",
+    "className": "com.aiper.mine.MineFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "device/x9/health_monitor",
+    "className": "com.aiper.device.x.ui.x9.healthmonitor.HealthMonitorActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://therouter.com/device/x9",
+    "className": "com.aiper.device.x.ui.x9.X9Activity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://therouter.com/device/x6/panel",
+    "className": "com.aiper.device.x.ui.x6.panel.X6PanelActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://therouter.com/device/x5ProMax/panel",
+    "className": "com.aiper.device.x.ui.x5promax.X5ProMaxPanelActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/x5/X5MainActivity",
+    "className": "com.aiper.device.x.ui.x5.X5MainActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://therouter.com/device/t1/panel",
+    "className": "com.aiper.device.x.ui.t1.panel.T1PanelActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://therouter.com/device/s1/panel",
+    "className": "com.aiper.device.s.ui.activity.S1PanelActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://therouter.com/s1/faq",
+    "className": "com.aiper.device.s.ui.activity.S1FAQActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/s1/faq",
+    "className": "com.aiper.device.s.ui.activity.S1FAQActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/s/edit_clean_task",
+    "className": "com.aiper.device.s.ui.activity.EditCleanTaskActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/s/clean_tasks",
+    "className": "com.aiper.device.s.ui.activity.CleanTasksActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://therouter.com/device/s2/panel",
+    "className": "com.aiper.device.s.ui.S2PanelActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/i/installation_guide",
+    "className": "com.aiper.device.i.ui.installation.InstallationGuideActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://therouter.com/device/i/r/panel",
+    "className": "com.aiper.device.i.ui.WrPanelActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/i/winter_mode",
+    "className": "com.aiper.device.i.ui.WinterModeActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/i/r/map_management",
+    "className": "com.aiper.device.i.ui.MapManagementActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/i/r/manual_operate",
+    "className": "com.aiper.device.i.ui.ManualOperateActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/i/irrigation_settings",
+    "className": "com.aiper.device.i.ui.IrrigationSettingsActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/i/irrigation_records",
+    "className": "com.aiper.device.i.ui.IrrigationRecordsActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/i/irrigation_record_detail",
+    "className": "com.aiper.device.i.ui.IrrigationRecordDetailActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/i/irrigation_calibration",
+    "className": "com.aiper.device.i.ui.IrrigationCalibrationActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/i/irrigating_unit_reminder",
+    "className": "com.aiper.device.i.ui.IrrigatingUnitReminderActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/i/irrigating_task",
+    "className": "com.aiper.device.i.ui.IrrigatingTaskActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/i/edit_irrigating_task",
+    "className": "com.aiper.device.i.ui.EditIrrigatingTaskActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/common/settings",
+    "className": "com.aiper.device.i.ui.DeviceSettingsActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/i/r/create_map_view",
+    "className": "com.aiper.device.i.ui.CreateMapViewActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/i/r/create_map_guide",
+    "className": "com.aiper.device.i.ui.CreateMapGuideActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://therouter.com/hydrocomm/w2/main",
+    "className": "com.aiper.device.hydrocomm.DeviceStationMainActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/basic/scan-device-code",
+    "className": "com.aiper.device.common.ui.scancode.ScanDeviceCodeActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "",
+    "className": "com.aiper.device.common.ui.scancode.ScanDeviceCodeActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/common/scan-code",
+    "className": "com.aiper.device.common.ui.scan.ScanActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://therouter.com/hydrocomm/water/probe/calibrate",
+    "className": "com.aiper.device.common.ui.probe.WaterProbeCalibrateActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://therouter.com/swimming/pool/add",
+    "className": "com.aiper.device.common.ui.pool.AddUserSwimmingPoolActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://therouter.com/hydrocomm/bound/link/list",
+    "className": "com.aiper.device.common.ui.link.BoundLinkDeviceListActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/basic/device-type",
+    "className": "com.aiper.device.common.ui.device_type.DeviceTypeActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "www.ota.upgrade.com",
+    "className": "com.aiper.device.common.ui.device_ota.DeviceOtaActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://aiper.app/ota",
+    "className": "com.aiper.device.common.ui.device_ota.DeviceOtaActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/common/ota",
+    "className": "com.aiper.device.common.ui.device_ota.DeviceOtaActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "device/common/funcation/debug",
+    "className": "com.aiper.device.common.ui.debugmode.DebugModeActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/connect/config/tip",
+    "className": "com.aiper.device.common.ui.connect.steps.ConfigurationTipFragment",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/common/ble_connect",
+    "className": "com.aiper.device.common.ui.connect.BleConnectActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/common/ap_connect",
+    "className": "com.aiper.device.common.ui.connect.ApConnectActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/common/add_device_by_types",
+    "className": "com.aiper.device.common.ui.append.AddDeviceByTypesActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/common/add_device_by_bluetooth",
+    "className": "com.aiper.device.common.ui.append.AddDeviceByBluetoothActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/common/no_ble_support",
+    "className": "com.aiper.device.common.NoBleSupportActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/device/b/b1/MainActivity",
+    "className": "com.aiper.device.b.ui.b1.MainActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/customer/pdf",
+    "className": "com.aiper.customer.ui.PdfPreviewActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "http://therouter.com/live-chat",
+    "className": "com.aiper.customer.ui.LiveChatActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/customer/live-chat",
+    "className": "com.aiper.customer.ui.LiveChatActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/aiper/basic/web",
+    "className": "com.aiper.base.ui.WebActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/aiper/basic/h5",
+    "className": "com.aiper.base.ui.WebActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  }
+]

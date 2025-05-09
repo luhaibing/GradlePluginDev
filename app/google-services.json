@@ -28,7 +28,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:870220297760:android:fd055f0da61ddbfc552e45",
         "android_client_info": {
-          "package_name": "com.aiper.link.debug"
+          "package_name": "com.aiper.link.demo"
         }
       },
       "oauth_client": [],
