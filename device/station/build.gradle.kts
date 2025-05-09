@@ -37,4 +37,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    // implementation(project(":base:ui"))
+    implementation(project(":base:base"))
+    implementation(project(":device:common"))
+    // implementation("com.mercer:base_ui:202505030303881")
 }

@@ -171,9 +171,17 @@ class DependencyReusePlugin : Plugin<Project> {
                         for (element in includes) {
                             substitute(project(element.named.path)).using(module(element.toString()))
                         }
+                        // substitute module('org.gradle:api') using project(':api')
+                        substitute(module("com.mercer:base_ui")).using(project(":base:ui"))
                     }
                 }
             }
+            println()
+            if (configuration.name in arrayOf("implementation", "api")) {
+                val dependencies = configuration.dependencies
+                println(dependencies)
+            }
+            println()
         }
     }
 

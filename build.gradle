@@ -20,13 +20,13 @@ if (new File(rootDir, "plugin-resp").exists()) {
     dependencyReuse {
         respUri = new File(rootDir, "resp").toURI()
         groupId = "com.mercer"
-        enabled = isEnabled
+        enabled = true
         autoPublish = true
     }
 }
 task clean(type: Delete) {
     delete(rootProject.buildDir)
-    delete(new File(rootDir, "resp"))
+    // delete(new File(rootDir, "resp"))
 }
 
 Properties getLocalProperties() {

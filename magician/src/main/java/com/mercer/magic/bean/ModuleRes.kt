@@ -16,7 +16,8 @@ data class ModuleRes(
     val type: Type,
     val projectDir: String,
     val files: List<FileRes>,
-    val subProjects: List<Named>,
+    val projectDependencies: List<Named>,
+    val moduleDependencies: List<Named2>,
     val lastModified: Long = files.maxOfOrNull { it.lastModified } ?: System.currentTimeMillis(),
     val lastModifiedTime: String = dataFormat.format(lastModified)
 ) {
@@ -26,12 +27,12 @@ data class ModuleRes(
 
     @Suppress("FunctionName")
     companion object {
-        fun Java(name: Named, files: List<FileRes>, subProjects: List<Named>, projectDir: String): ModuleRes {
-            return ModuleRes(named = name, type = Type.Java, projectDir = projectDir, files = files, subProjects = subProjects)
+        fun Java(name: Named, files: List<FileRes>, subProjects: List<Named>, projectDir: String, moduleDependencies: List<Named2>): ModuleRes {
+            return ModuleRes(named = name, type = Type.Java, projectDir = projectDir, files = files, projectDependencies = subProjects, moduleDependencies =moduleDependencies)
         }
 
-        fun Android(name: Named, files: List<FileRes>, subProjects: List<Named>, projectDir: String): ModuleRes {
-            return ModuleRes(named = name, type = Type.Android, projectDir = projectDir, files = files, subProjects = subProjects)
+        fun Android(name: Named, files: List<FileRes>, subProjects: List<Named>, projectDir: String, moduleDependencies :List<Named2>,): ModuleRes {
+            return ModuleRes(named = name, type = Type.Android, projectDir = projectDir, files = files, projectDependencies = subProjects, moduleDependencies = moduleDependencies)
         }
     }
 
@@ -39,7 +40,7 @@ data class ModuleRes(
         val files = files.map {
             it.copy(name = it.name.replace(arrayOf(projectDir, File.separator).joinToString(""), "").replace("\\", "/"))
         }
-        val bean = copy(files = files, projectDir = projectDir.replace("\\","/"))
+        val bean = copy(files = files, projectDir = projectDir.replace("\\", "/"))
         return Gson().toJson(bean)
     }
 

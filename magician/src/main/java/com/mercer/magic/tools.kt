@@ -56,7 +56,9 @@ fun Project.javaRes(): ModuleRes {
     kotlinExtension?.sourceSets?.findByName(MAIN)?.let(kotlinPredicate)
     kotlinExtension?.sourceSets?.findByName(DEBUG)?.let(kotlinPredicate)
     subProjects.addAll(findProjectDependencies())
-    return ModuleRes.Java(name = project.named, files = files, subProjects = subProjects, projectDir = projectDir.absolutePath)
+    val moduleDependencies = findModuleDependencies()
+    println(moduleDependencies)
+    return ModuleRes.Java(name = project.named, files = files, subProjects = subProjects, projectDir = projectDir.absolutePath, moduleDependencies = emptyList())
 }
 
 
@@ -81,7 +83,11 @@ fun Project.androidRes(): ModuleRes {
     android?.sourceSets?.findByName(MAIN)?.let(predicate)
     android?.sourceSets?.findByName(DEBUG)?.let(predicate)
     subProjects.addAll(findProjectDependencies())
-    return ModuleRes.Android(name = project.named, files = files, subProjects = subProjects, projectDir = projectDir.absolutePath)
+    // 本地仓库依赖
+    // Local repository dependency
+    val moduleDependencies = findModuleDependencies()
+    println(moduleDependencies)
+    return ModuleRes.Android(name = project.named, files = files, subProjects = subProjects, projectDir = projectDir.absolutePath, moduleDependencies = emptyList())
 }
 
 fun Project.findProjectDependencies() = project.configurations
@@ -97,6 +103,25 @@ fun Project.findProjectDependencies() = project.configurations
     .map {
         Named(name = it.name, path = it.path)
     }
+    .toList()
+
+fun Project.findModuleDependencies() = project.configurations
+    .asSequence()
+    .filter {
+        it.name in arrayOf("implementation", "api")
+    }
+    .map { con ->
+        val dependencies = con.dependencies
+        println(con)
+        println(dependencies)
+        emptyList<Any>()
+        // con.dependencies.filterIsInstance<DefaultProjectDependency>()
+    }
+    .flatten()
+    .toList()
+//    .map {
+//        Named(name = it.name, path = it.path)
+//    }
     .toList()
 
 val Project.named: Named

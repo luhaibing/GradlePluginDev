@@ -11,3 +11,9 @@ data class Named(
     val path: String,
     val artifactName: String = path.split(":").filter(String::isNotBlank).joinToString("_"),
 )
+
+data class Named2(
+    val group: String,
+    val name: String,
+    val version: String,
+)

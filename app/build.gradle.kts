@@ -47,7 +47,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(project(":base:base"))
-    implementation(project(":base:ui"))
+//    implementation(project(":base:ui"))
 
     implementation(project(":device:common"))
     implementation(project(":device:boat"))
@@ -56,5 +56,7 @@ dependencies {
     implementation(project(":device:swimming"))
 
     implementation(project(":feature:weather"))
+
+    implementation("com.mercer:base_ui:202505030303881")
 
 }
