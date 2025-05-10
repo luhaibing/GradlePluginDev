@@ -178,3 +178,5 @@ protobuf {
         }
     }
 }
+
+apply from: rootProject.file("gradle/publishToLocalRepo.gradle")

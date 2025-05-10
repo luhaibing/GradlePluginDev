@@ -67,17 +67,17 @@ Properties getLocalProperties() {
     return properties
 }
 
+// 本地仓库路径
+def repoFolder = rootProject.file("resp")
+// 本地依赖 groupId
+def group = "com.aiper"
+
+ext.repo = repoFolder
+ext.groupId = group
+
 if (project.file("local.properties").exists()) {
     def taskNames = gradle.startParameter.taskNames
     println("running the Gradle command >>>${taskNames}")
-    // 本地仓库路径
-    def repoFolder = rootProject.file("local-repo")
-    // 本地依赖 groupId
-    def group = "com.aiper"
-
-    ext.repo = repoFolder
-    ext.groupId = group
-
     tasks.register('deleteRepo', Delete) {
         delete repoFolder
     }

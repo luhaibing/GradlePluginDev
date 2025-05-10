@@ -65,3 +65,5 @@ dependencies {
     ksp(libs.chestnuts.processor)
 
 }
+
+apply from: rootProject.file("gradle/publishToLocalRepo.gradle")

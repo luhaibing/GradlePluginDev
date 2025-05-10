@@ -96,3 +96,5 @@ dependencies {
     ksp(libs.chestnuts.processor)
     implementation(project(":features:ymodem"))
 }
+
+apply from: rootProject.file("gradle/publishToLocalRepo.gradle")

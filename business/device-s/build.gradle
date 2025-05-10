@@ -65,3 +65,5 @@ dependencies {
     implementation(project(":common-service:database"))
     implementation "com.github.yyued:SVGAPlayer-Android:2.6.1"
 }
+
+apply from: rootProject.file("gradle/publishToLocalRepo.gradle")

@@ -56,3 +56,5 @@ dependencies {
     kapt("cn.therouter:apt:1.2.1")
     // implementation("cn.therouter:apt:1.2.1")
 }
+
+apply from: rootProject.file("gradle/publishToLocalRepo.gradle")
