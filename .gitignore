@@ -1,0 +1,17 @@
+# 文件
+*.iml
+.DS_Store
+.externalNativeBuild
+.cxx
+local.properties
+routeMap.json
+
+# 文件夹
+.gradle
+.idea
+build/
+captures/
+dependencies/
+deprecate/
+/resp/
+/repo/

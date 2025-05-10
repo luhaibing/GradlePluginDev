@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "870220297760",
+    "project_id": "com-aiper-link",
+    "storage_bucket": "com-aiper-link.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870220297760:android:e8aa5faf1bc992d2552e45",
+        "android_client_info": {
+          "package_name": "com.aiper.link"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIaBcC0q9FuqljKM8CtSVpcFnb53rKTXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870220297760:android:fd055f0da61ddbfc552e45",
+        "android_client_info": {
+          "package_name": "com.aiper.link.demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIaBcC0q9FuqljKM8CtSVpcFnb53rKTXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870220297760:android:097fca8a1bd0fe66552e45",
+        "android_client_info": {
+          "package_name": "com.aiper.link.test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIaBcC0q9FuqljKM8CtSVpcFnb53rKTXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
