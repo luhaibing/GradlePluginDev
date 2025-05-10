@@ -49,4 +49,4 @@ include ':business:mine'
 include ':business:device-i'
 include ':business:device-hydrocomm'
 
-include ':magician'
+//include ':magician'

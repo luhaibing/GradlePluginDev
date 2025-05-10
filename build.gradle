@@ -1,3 +1,5 @@
+import java.util.regex.Pattern
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     dependencies {
@@ -42,6 +44,7 @@ task clean(type: Delete) {
     delete(new File(rootDir, "resp2"))
 }
 
+/*
 def dir = new File(rootDir, "plugin-resp")
 if (dir.exists()) {
     apply plugin: "dependency-reuse"
@@ -54,6 +57,7 @@ if (dir.exists()) {
         autoPublish = true
     }
 }
+*/
 
 Properties getLocalProperties() {
     def properties = new Properties()
@@ -61,4 +65,74 @@ Properties getLocalProperties() {
     println(file.absolutePath)
     properties.load(file.newInputStream())
     return properties
+}
+
+if (project.file("local.properties").exists()) {
+    def taskNames = gradle.startParameter.taskNames
+    println("running the Gradle command >>>${taskNames}")
+    // 本地仓库路径
+    def repoFolder = rootProject.file("local-repo")
+    // 本地依赖 groupId
+    def group = "com.aiper"
+
+    ext.repo = repoFolder
+    ext.groupId = group
+
+    tasks.register('deleteRepo', Delete) {
+        delete repoFolder
+    }
+    Pattern pattern = Pattern.compile(":?[a-zA-Z0-9]+:assemble(debug|trial|release)")
+    // 检测是否为打包安装的任务
+    var condition = taskNames.size() == 1 && pattern.matcher(taskNames.first().toLowerCase()) != null
+    if (!condition) {
+        return
+    }
+    if (repoFolder.exists()) {
+        // 所有子模块
+        Set<Project> children = project.subprojects
+        // 已发布缓存
+        Set<String> includes = new HashSet<>()
+        // 未发布缓存
+        Set<String> excludes = new HashSet<>()
+        File folder = new File(repoFolder, group.replace(".", "/"))
+        // TODO: 暂拟定版本号为 1.0.0,不变
+        def version = "1.0.0"
+        for (child in children) {
+            // TODO: 暂不考虑 子模块导入的插件类型
+            // TODO: 暂不考虑 不完整 的情况
+            def buildFileExists = child.buildFile.exists()
+            if (!buildFileExists) {
+                continue
+            }
+            List<String> names = new ArrayList()
+            Project level = child
+            do {
+                names.add(0, level.name)
+                level = level.parent
+            } while (level != rootProject)
+            def name = names.join("_")
+            def f = new File(folder, "${name}/$version")
+            if (f.exists()) {
+                includes.add(name)
+            } else {
+                excludes.add(name)
+            }
+        }
+        subprojects {
+            configurations.configureEach {
+                resolutionStrategy {
+                    dependencySubstitution {
+                        for (def value in includes) {
+                            def target = "$group:$value:$version"
+                            substitute project(":${value.split('_').join(':')}") using module(target)
+                        }
+                        for (def value in excludes) {
+                            def target = "$group:$value:$version"
+                            substitute module(target) using project(":${value.replace('_', ':')}")
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
