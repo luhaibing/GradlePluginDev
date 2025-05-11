@@ -16,6 +16,8 @@ buildscript {
         dependencies {
             classpath("com.mercer:magician:1.0.0")
         }
+    } else {
+        System.err.println("本地插件仓库不存在.")
     }
 }
 
@@ -44,20 +46,19 @@ task clean(type: Delete) {
     delete(new File(rootDir, "resp"))
 }
 
-/*
+
 def dir = new File(rootDir, "plugin-resp")
 if (dir.exists()) {
     apply plugin: "dependency-reuse"
     Properties localProperties = getLocalProperties()
     def isEnabled = Boolean.parseBoolean(localProperties.get("use.dependency.reuse"))
     dependencyReuse {
-        respUri = new File(rootDir, "resp").toURI()
+        respUri = new File(rootDir, "repo").toURI()
         groupId = "com.mercer"
         enabled = true
         autoPublish = true
     }
 }
-*/
 
 Properties getLocalProperties() {
     def properties = new Properties()
@@ -75,6 +76,7 @@ def group = "com.aiper"
 ext.repo = repoFolder
 ext.groupId = group
 
+/*
 if (project.file("local.properties").exists()) {
     def taskNames = gradle.startParameter.taskNames
     println("running the Gradle command >>>${taskNames}")
@@ -136,3 +138,4 @@ if (project.file("local.properties").exists()) {
         }
     }
 }
+*/
